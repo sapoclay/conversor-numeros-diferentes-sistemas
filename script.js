@@ -146,27 +146,28 @@
                 let hexInput = $("#hex-input").val();
                 let octInput = $("#oct-input").val();
 
-                // Si se ingresa texto, actualizar binario y hexadecimal
+                // Si se escribe un número decimal
                 if (textInput) {
                     $("#binary-input").val(decimalToBinary(textInput));
                     $("#hex-input").val(decimalToHex(textInput));
                     $("#oct-input").val(decimalToOctal(textInput));
                 }
 
-                // Si se ingresa binario, actualizar texto y hexadecimal
+                // Si se escribe un número binario
                 if (binaryInput) {
                     $("#text-input").val(binaryToDecimal(binaryInput));
                     $("#hex-input").val(binaryToHex(binaryInput));
                     $("#oct-input").val(binaryToOctal(binaryInput));
                 }
 
-                // Si se ingresa hexadecimal, actualizar texto y binario
+                // Si se escribe un número hexadecimal
                 if (hexInput) {
                     $("#text-input").val(hexToDecimal(hexInput));
                     $("#binary-input").val(hexToBinary(hexInput));
                     $("#oct-input").val(hexToOctal(hexInput));
                 }
-
+                
+                // Si se escribe un número octal
                 if (octInput) {
                     $("#text-input").val(octalToDecimal(octInput));
                     $("#binary-input").val(octalToBinary(octInput));
@@ -217,7 +218,7 @@
                 $("#oct-input").val(octal);
             });
 
-            // Evento clic para botón "Hexadecimal a texto"
+            // Evento clic para botón "Hexadecimal a decimal"
             $("#from-hex-btn").click(function() {
                 let hex = $("#hex-input").val();
                 let text = hexToDecimal(hex);
